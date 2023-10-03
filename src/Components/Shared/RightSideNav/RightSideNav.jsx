@@ -1,6 +1,9 @@
 import fblogo from "../../../assets/SVG/fb.svg";
 import twitterlogo from "../../../assets/SVG/twitter.svg";
 import instagramlogo from "../../../assets/SVG/instagram.svg";
+import qzone1 from "../../../assets/images/qZone1.png";
+import qzone2 from "../../../assets/images/qZone2.png";
+import qzone3 from "../../../assets/images/qZone3.png";
 
 const RightSideNav = () => {
 	return (
@@ -92,6 +95,22 @@ const RightSideNav = () => {
 						<img className=" w-5 h-5" src={instagramlogo} alt="" />
 					</div>
 					<p className=" text-gray-600 font-medium">Instagram</p>
+				</div>
+			</div>
+
+			{/* Q Zone Section */}
+			<div className=" bg-gray-100 px-4 mt-4 rounded-lg">
+				<h1 className=" text-gray-800 font-bold mb-4 pt-5">Q-Zone</h1>
+				<div className="space-y-5">
+					<div>
+						<img src={qzone1} alt="" />
+					</div>
+					<div>
+						<img src={qzone2} alt="" />
+					</div>
+					<div>
+						<img src={qzone3} alt="" />
+					</div>
 				</div>
 			</div>
 		</div>
