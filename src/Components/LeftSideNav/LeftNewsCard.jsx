@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 const LeftNewsCard = ({ news }) => {
 	const { title, author, image_url } = news || {};
 	const { published_date } = author;
-	console.log(published_date.split(" "));
 
 	return (
 		<div className=" mb-5">
@@ -42,7 +41,7 @@ const LeftNewsCard = ({ news }) => {
 							</svg>
 
 							<div className="mt-1.5 sm:mt-0">
-								<p className="text-gray-500">{published_date.split(" ")[0]}</p>
+								<p className="text-gray-500">{published_date?.split(" ")[0]}</p>
 							</div>
 						</div>
 					</div>

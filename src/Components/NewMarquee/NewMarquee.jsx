@@ -11,16 +11,18 @@ const NewMarquee = () => {
 						Highlights: Germany vs Spain as...
 					</Link>
 					<Link to={"#"}>
-						Match Highlights: Germany vs Spain — as it happened ! Match
-						Highlights: Germany vs Spain as...
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+						culpa nemo odit minus quia, quod doloremque expedita iure vel illum.
 					</Link>
 					<Link to={"#"}>
 						Match Highlights: Germany vs Spain — as it happened ! Match
 						Highlights: Germany vs Spain as...
 					</Link>
 					<Link to={"#"}>
-						Match Highlights: Germany vs Spain — as it happened ! Match
-						Highlights: Germany vs Spain as...
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea eos at
+						esse iusto consectetur autem tempore porro debitis nisi nesciunt ad
+						maiores molestiae sunt nemo amet, id aperiam magni
+						necessitatibus.....?
 					</Link>
 				</div>
 			</Marquee>

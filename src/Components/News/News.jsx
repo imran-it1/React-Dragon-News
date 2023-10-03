@@ -35,7 +35,7 @@ const News = () => {
 						type="button"
 						className="py-2 px-4  bg-rose-600 hover:bg-rose-700  rounded focus:ring-rose-500 focus:ring-offset-rose-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 "
 					>
-						Latest
+						See All
 					</button>
 				</div>
 			)}

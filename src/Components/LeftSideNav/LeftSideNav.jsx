@@ -25,7 +25,7 @@ const LeftSideNav = () => {
 				All Category
 			</h1>
 
-			<ul>
+			<ul className=" mb-5">
 				{categories.map(category => (
 					<Category key={category.id} category={category}></Category>
 				))}

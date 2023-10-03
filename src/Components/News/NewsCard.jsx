@@ -32,7 +32,7 @@ const NewsCard = ({ news }) => {
 								{name}
 							</a>
 							<span className="text-xs dark:text-gray-400">
-								{published_date.split(" ")[0]}
+								{published_date?.split(" ")[0]}
 							</span>
 						</div>
 					</div>
@@ -76,14 +76,17 @@ const NewsCard = ({ news }) => {
 							className="rounded object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500"
 						/>
 
-						{readMore ? (
-							<p className="leading-6 dark:text-gray-400">{details}</p>
-						) : (
-							<p className="leading-6 dark:text-gray-400">
-								{details.length > 300 ? details.slice(0, 200) + "..." : details}
-							</p>
-						)}
-
+						<div className=" inline-block">
+							{readMore ? (
+								<p className="leading-6 dark:text-gray-400">{details}</p>
+							) : (
+								<p className="leading-6 dark:text-gray-400">
+									{details.length > 300
+										? details.slice(0, 200) + "..."
+										: details}
+								</p>
+							)}
+						</div>
 						<button
 							onClick={() => setReadMore(!readMore)}
 							className=" my-1 text-lg font-semibold text-orange-500"

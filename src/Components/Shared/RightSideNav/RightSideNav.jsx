@@ -73,25 +73,25 @@ const RightSideNav = () => {
 			{/* Find US Section */}
 			<h1 className=" text-gray-800 font-bold mt-7 mb-5">Find US On</h1>
 
-			<div className=" border py-4 pl-4 rounded-t-lg">
-				<div className=" flex gap-3 items-center">
-					<div className=" bg-gray-100 p-2 rounded-full">
+			<div className=" border py-4 pl-4 rounded-t-lg hover:text-gray-700">
+				<div className=" flex gap-3 items-center hover:cursor-pointer hover:scale-105 duration-300">
+					<div className=" bg-gray-100 hover:bg-gray-200 duration-300 p-2 rounded-full">
 						<img className=" w-5 h-5" src={fblogo} alt="" />
 					</div>
 					<p className=" text-gray-600 font-medium">Facebook</p>
 				</div>
 			</div>
-			<div className="border-x py-4 pl-4">
-				<div className=" flex gap-3 items-center">
-					<div className=" bg-gray-100 p-2 rounded-full">
+			<div className=" border-x py-4 pl-4  hover:text-gray-700">
+				<div className=" flex gap-3 items-center hover:cursor-pointer hover:scale-105 duration-300">
+					<div className=" bg-gray-100 hover:bg-gray-200 duration-300 p-2 rounded-full">
 						<img className=" w-5 h-5" src={twitterlogo} alt="" />
 					</div>
 					<p className=" text-gray-600 font-medium">Twitter</p>
 				</div>
 			</div>
-			<div className="border py-4 pl-4 rounded-b-lg">
-				<div className=" flex gap-3 items-center">
-					<div className=" bg-gray-100 p-2 rounded-full">
+			<div className=" border py-4 pl-4 rounded-b-lg hover:text-gray-700">
+				<div className=" flex gap-3 items-center hover:cursor-pointer hover:scale-105 duration-300">
+					<div className=" bg-gray-100 hover:bg-gray-200 duration-300 p-2 rounded-full">
 						<img className=" w-5 h-5" src={instagramlogo} alt="" />
 					</div>
 					<p className=" text-gray-600 font-medium">Instagram</p>
