@@ -3,15 +3,15 @@ import { useState } from "react";
 import Rating from "react-rating";
 import { BsStarFill } from "react-icons/bs";
 import { BsStarHalf } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
 	const [readMore, setReadMore] = useState(false);
 
-	const { rating, total_view, title, author, image_url, details } = news || {};
+	const { _id, rating, total_view, title, author, image_url, details } =
+		news || {};
 
 	const { name, published_date, img } = author;
-
-	console.log(details.length > 300 ? details.slice(0, 300) : details);
 
 	return (
 		<div className="mb-7">
@@ -45,7 +45,7 @@ const NewsCard = ({ news }) => {
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 512 512"
-								className="w-4 h-4 fill-current text-gray-400"
+								className="w-4 h-4 fill-current text-gray-400 hover:scale-105 hover:text-base hover:text-rose-600 duration-300 ease-in-out"
 							>
 								<path d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z"></path>
 							</svg>
@@ -58,7 +58,7 @@ const NewsCard = ({ news }) => {
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 512 512"
-								className="w-4 h-4 fill-current text-gray-400"
+								className="w-4 h-4 fill-current text-gray-400 hover:scale-105 hover:text-base hover:text-rose-600 duration-300 ease-in-out"
 							>
 								<path d="M424,496H388.75L256.008,381.19,123.467,496H88V16H424ZM120,48V456.667l135.992-117.8L392,456.5V48Z"></path>
 							</svg>
@@ -87,12 +87,40 @@ const NewsCard = ({ news }) => {
 								</p>
 							)}
 						</div>
-						<button
-							onClick={() => setReadMore(!readMore)}
-							className=" my-1 text-lg font-semibold text-orange-500"
-						>
-							{readMore ? "Read Less" : "Read More"}
-						</button>
+						<div className=" mt-2 flex justify-between items-center">
+							<button
+								onClick={() => setReadMore(!readMore)}
+								className=" my-1 text-lg font-semibold text-orange-500"
+							>
+								{readMore ? "Read Less" : "Read More"}
+							</button>
+							<Link
+								to={`/news/${_id}`}
+								className="group relative inline-flex items-center overflow-hidden rounded border border-current px-6 py-2 text-orange-600 focus:outline-none focus:ring focus:ring-orange-400 focus:ring-offset-2 active:text-orange-500"
+								href="/download"
+							>
+								<span className="absolute -end-full transition-all group-hover:end-4">
+									<svg
+										className="h-5 w-5 rtl:rotate-180"
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											d="M17 8l4 4m0 0l-4 4m4-4H3"
+										/>
+									</svg>
+								</span>
+
+								<span className="text-sm font-medium transition-all group-hover:me-4">
+									See Details
+								</span>
+							</Link>
+						</div>
 					</div>
 
 					<div className=" my-5">
