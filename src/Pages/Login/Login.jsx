@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import NavBar from "../../Components/Shared/NavBar/NavBar";
 import { useContext } from "react";
@@ -7,8 +7,13 @@ import toast from "react-hot-toast";
 
 const Login = () => {
 	// use context
-
 	const { userLogin } = useContext(AuthContext);
+
+	// Use location hook to get user desire location(Where he attempt to go)
+	const location = useLocation();
+
+	// navigate hook
+	const navigate = useNavigate();
 
 	// login handle
 	const handleLogin = e => {
@@ -28,6 +33,9 @@ const Login = () => {
 
 				// Form field reset
 				e.target.reset();
+
+				// Navigate after login
+				navigate(location?.state ? location.state : "/");
 			})
 			.catch(error => {
 				console.log(error.message);

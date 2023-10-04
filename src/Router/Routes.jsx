@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "../Private/PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
 
 			{
 				path: "/news/:id",
-				element: <NewsDetails></NewsDetails>,
+				element: (
+					<PrivateRoute>
+						<NewsDetails></NewsDetails>
+					</PrivateRoute>
+				),
 			},
 
 			{

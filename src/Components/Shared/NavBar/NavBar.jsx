@@ -59,7 +59,7 @@ const NavBar = () => {
 
 					<Link
 						onClick={handleSignOut}
-						to={"/login"}
+						to={"/"}
 						type="button"
 						className="py-2 px-8  bg-gray-800 hover:bg-gray-900 focus:ring-gray-500 focus:ring-offset-gray-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 "
 					>

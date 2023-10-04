@@ -22,25 +22,30 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
 	// user state
 	const [user, setUser] = useState(null);
+	const [loading, setLoading] = useState(true);
 
 	// Creat user
 	const createUser = (email, password) => {
+		setLoading(true);
 		return createUserWithEmailAndPassword(auth, email, password);
 	};
 
 	// use sign in
 
 	const userLogin = (email, password) => {
+		setLoading(true);
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 
 	// use sign out
 	const logOut = () => {
+		setLoading(true);
 		return signOut(auth);
 	};
 
 	// Update uer profile
 	const updateUserProfile = (name, photo) => {
+		setLoading(true);
 		return updateProfile(auth.currentUser, {
 			displayName: name,
 			photoURL: photo,
@@ -49,18 +54,23 @@ const AuthProvider = ({ children }) => {
 
 	//google signin
 	const googleSignIn = () => {
+		setLoading(true);
 		return signInWithPopup(auth, googleProvider);
 	};
 	//github signin
 	const githubSignIn = () => {
+		setLoading(true);
+
 		return signInWithPopup(auth, githubProvider);
 	};
 
 	// Get currentlu sign in user
 	useEffect(() => {
+		setLoading(true);
 		const unsubcribe = onAuthStateChanged(auth, currentUser => {
 			console.log("Observe current user", currentUser);
 			setUser(currentUser);
+			setLoading(false);
 		});
 
 		return () => {
@@ -77,6 +87,7 @@ const AuthProvider = ({ children }) => {
 		logOut,
 		googleSignIn,
 		githubSignIn,
+		loading,
 	};
 	return (
 		<AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
