@@ -4,8 +4,36 @@ import instagramlogo from "../../../assets/SVG/instagram.svg";
 import qzone1 from "../../../assets/images/qZone1.png";
 import qzone2 from "../../../assets/images/qZone2.png";
 import qzone3 from "../../../assets/images/qZone3.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const RightSideNav = () => {
+	// use context
+	const { googleSignIn, githubSignIn } = useContext(AuthContext);
+
+	// Handle google sign in
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then(() => {
+				toast.success("Google sign in successful");
+			})
+			.catch(() => {
+				toast.error("Something went wrong");
+			});
+	};
+
+	// handle github sign in
+	const handleGitHubSignIn = () => {
+		githubSignIn()
+			.then(() => {
+				toast.success("GitHub sign in successful");
+			})
+			.catch(() => {
+				toast.error("Something went wrong");
+			});
+	};
+
 	return (
 		<div className=" mt-20">
 			{/* Login Method */}
@@ -14,6 +42,7 @@ const RightSideNav = () => {
 				{/* Google BTN */}
 				<div className=" mt-3">
 					<button
+						onClick={handleGoogleSignIn}
 						type="button"
 						className="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
 					>
@@ -33,6 +62,7 @@ const RightSideNav = () => {
 				{/* GitHub */}
 				<div>
 					<button
+						onClick={handleGitHubSignIn}
 						type="button"
 						className="py-2 px-4 flex justify-center items-center  bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
 					>

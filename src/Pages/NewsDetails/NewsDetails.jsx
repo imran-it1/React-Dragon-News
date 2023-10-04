@@ -31,7 +31,7 @@ const NewsDetails = () => {
 					{<NewsDetailsCard news={findNews}></NewsDetailsCard>}
 				</div>
 				{/* Right Side */}
-				<div className="">
+				<div>
 					<RightSideNav></RightSideNav>
 				</div>
 			</div>

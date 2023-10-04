@@ -37,7 +37,7 @@ const LeftSideNav = () => {
 					.map(news => <LeftNewsCard key={news.id} news={news}></LeftNewsCard>)}
 
 			{newses?.slice(0, 5).map(news => (
-				<LeftNewsCard key={news.id} news={news}></LeftNewsCard>
+				<LeftNewsCard key={news._id} news={news}></LeftNewsCard>
 			))}
 
 			{seeAll || (

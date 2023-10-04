@@ -17,14 +17,14 @@ const News = () => {
 				Dragon News Home
 			</h1>
 
-			<div className="">
+			<div>
 				{seeAll &&
 					newses
 						.slice(0, newses.length)
 						.map(news => <NewsCard key={news.id} news={news}></NewsCard>)}
 
 				{newses?.slice(0, 4).map(news => (
-					<NewsCard key={news.id} news={news}></NewsCard>
+					<NewsCard key={news._id} news={news}></NewsCard>
 				))}
 			</div>
 
